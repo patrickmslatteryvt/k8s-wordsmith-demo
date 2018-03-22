@@ -27,7 +27,7 @@ docker-compose build
 
 ## Deploy as a Docker Stack
 
-The latest version of [Docker for Mac](https://www.docker.com/docker-mac) has Kubernetes built-in. 
+The latest version of [Docker for Mac](https://www.docker.com/docker-mac) has Kubernetes built-in.
 
 Docker lets you use the simple [Docker Compose](https://docs.docker.com/compose/) file format to deploy complex applications to Kubernetes. You can deploy the wordsmith app to the local Kubernetes cluster using [docker-compose.yml](docker-compose.yml).
 
@@ -89,7 +89,13 @@ docker stack rm wordsmith
 Now apply the manifest using `kubectl`:
 
 ```
-kubectl apply -f kube-deployment.yml
+kubectl apply --validate=true --filename ./kube-deployment.yml
+```
+
+* To remove the deployment:
+
+```
+kubectl delete --filename ./kube-deployment.yml
 ```
 
 Now browse to http://localhost:8081 and you will see the same site.
