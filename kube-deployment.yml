@@ -1,7 +1,16 @@
 apiVersion: v1
+kind: Namespace
+metadata:
+  name: demos-words
+  labels:
+    name: demos-words
+    namespace: demos-words
+---
+apiVersion: v1
 kind: Service
 metadata:
   name: db
+  namespace: demos-words
   labels:
     app: words-db
 spec:
@@ -17,11 +26,13 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: db
+  namespace: demos-words
   labels:
     app: words-db
 spec:
   template:
     metadata:
+      namespace: demos-words
       labels:
         app: words-db
     spec:
@@ -36,6 +47,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: words
+  namespace: demos-words
   labels:
     app: words-api
 spec:
@@ -51,12 +63,14 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: words
+  namespace: demos-words
   labels:
     app: words-api
 spec:
   replicas: 5
   template:
     metadata:
+      namespace: demos-words
       labels:
         app: words-api
     spec:
@@ -71,6 +85,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: web
+  namespace: demos-words
   labels:
     app: words-web
 spec:
@@ -85,12 +100,14 @@ spec:
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
+  namespace: demos-words
   name: web
   labels:
     app: words-web
 spec:
   template:
     metadata:
+      namespace: demos-words
       labels:
         app: words-web
     spec:
@@ -105,6 +122,7 @@ kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
   name: words-web-ingress
+  namespace: demos-words
   annotations:
     nginx.org/proxy-connect-timeout: "60"
     nginx.org/proxy-read-timeout: "300"
