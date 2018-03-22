@@ -95,7 +95,10 @@ or:
 kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yml
 ```
 
-* To remove the deployment:
+Now browse to http://localhost:8081 and you will see the same site.
+
+
+To remove the deployment:
 
 ```
 kubectl delete --filename ./kube-deployment.yml
@@ -103,5 +106,3 @@ kubectl delete --filename ./kube-deployment.yml
 or:
 kubectl delete --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yml
 ```
-
-Now browse to http://localhost:8081 and you will see the same site.
