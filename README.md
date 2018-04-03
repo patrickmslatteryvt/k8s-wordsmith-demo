@@ -89,10 +89,10 @@ docker stack rm wordsmith
 Now apply the manifest using `kubectl`:
 
 ```
-kubectl apply --validate=true --filename ./kube-deployment.yml
+kubectl apply --validate=true --filename ./kube-deployment.yaml
 
 or:
-kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yml
+kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yaml
 ```
 
 Now browse to http://localhost:8081 and you will see the same site.
@@ -101,8 +101,8 @@ Now browse to http://localhost:8081 and you will see the same site.
 To remove the deployment:
 
 ```
-kubectl delete --filename ./kube-deployment.yml
+kubectl delete --filename ./kube-deployment.yaml
 
 or:
-kubectl delete --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yml
+kubectl delete --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/master/kube-deployment.yaml
 ```
