@@ -97,6 +97,39 @@ kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k
 
 Now browse to http://localhost:8081 and you will see the same site.
 
+To do a rolling update to the Vermont theme:
+
+```
+kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/demo1/kube-deployment.yaml
+```
+
+Check the rollout history of the deployments:
+```
+$ kubectl --namespace=demos-words rollout history deployment
+deployments "db"
+REVISION  CHANGE-CAUSE
+11        <none>
+12        <none>
+
+deployments "web"
+REVISION  CHANGE-CAUSE
+11        <none>
+12        <none>
+
+deployments "words"
+REVISION  CHANGE-CAUSE
+11        <none>
+12        <none>
+```
+
+Roll back the deployments to the Danish theme:
+
+```
+kubectl --namespace=demos-words rollout undo deployment/{db,words,web} --to-revision=11
+  deployment "db" rolled back
+  deployment "words" rolled back
+  deployment "web" rolled back
+```
 
 To remove the deployment:
 
