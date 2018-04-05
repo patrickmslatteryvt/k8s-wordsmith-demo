@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: db
-        image: dockersamples/k8s-wordsmith-db
+        image: patrickmslatteryvt/k8s-wordsmith-db:vt
         ports:
         - containerPort: 5432
           name: db
@@ -76,7 +76,7 @@ spec:
     spec:
       containers:
       - name: words
-        image: dockersamples/k8s-wordsmith-api
+        image: patrickmslatteryvt/k8s-wordsmith-api:vt
         ports:
         - containerPort: 8080
           name: api
@@ -113,7 +113,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: dockersamples/k8s-wordsmith-web
+        image: patrickmslatteryvt/k8s-wordsmith-web:vt
         ports:
         - containerPort: 80
           name: words-web
