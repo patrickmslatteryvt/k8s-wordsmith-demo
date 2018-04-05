@@ -45,7 +45,7 @@ INSERT INTO adjectives(word) VALUES
   ('the 802'),
   ('a shiny'),
   ('feel the bern'),
-  ('the 'noosk'),
+  ('the noosk'),
   ('an awesøme'),
   ('the granite'),
   ('a gigantic'),
