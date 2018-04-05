@@ -97,6 +97,12 @@ kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k
 
 Now browse to http://localhost:8081 and you will see the same site.
 
+To do a rolling update to the Vermont theme:
+
+```
+kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/demo1/kube-deployment.yaml
+```
+
 
 To remove the deployment:
 
