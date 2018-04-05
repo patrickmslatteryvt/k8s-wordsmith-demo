@@ -103,6 +103,8 @@ To do a rolling update to the Vermont theme:
 kubectl apply --validate=true --filename https://github.com/patrickmslatteryvt/k8s-wordsmith-demo/raw/demo1/kube-deployment.yaml
 ```
 
+![The Wordsmith app running in Kubernetes v1.9.x](img/vermont_theme.png)
+
 Check the rollout history of the deployments:
 ```
 $ kubectl --namespace=demos-words rollout history deployment
