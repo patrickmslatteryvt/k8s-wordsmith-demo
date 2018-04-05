@@ -4,16 +4,16 @@ services:
 
   db:
     build: db
-    image: patrickmslatteryvt/k8s-wordsmith-db
+    image: patrickmslatteryvt/k8s-wordsmith-db:vt
 
   words:
     build: words
-    image: patrickmslatteryvt/k8s-wordsmith-api
+    image: patrickmslatteryvt/k8s-wordsmith-api:vt
     deploy:
       replicas: 5
 
   web:
     build: web
-    image: patrickmslatteryvt/k8s-wordsmith-web
+    image: patrickmslatteryvt/k8s-wordsmith-web:vt
     ports:
      - "8080:80"
