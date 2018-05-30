@@ -128,7 +128,7 @@ metadata:
     nginx.org/proxy-read-timeout: "300"
 spec:
   rules:
-  - host: words.devdmz.mywebgrocer.com
+  - host: words.dev.mywebgrocer.com
     http:
       paths:
       - backend:
