@@ -118,20 +118,3 @@ spec:
         ports:
         - containerPort: 80
           name: words-web
----
-kind: Ingress
-apiVersion: extensions/v1beta1
-metadata:
-  name: words-web-ingress
-  namespace: demos-words
-  annotations:
-    nginx.org/proxy-connect-timeout: "60"
-    nginx.org/proxy-read-timeout: "300"
-spec:
-  rules:
-  - host: words.devdmz.mywebgrocer.com
-    http:
-      paths:
-      - backend:
-          serviceName: web
-          servicePort: 8081
